@@ -28,9 +28,14 @@ london_co = {
 
 
 name = input('Введите имя устройства: ')
-name_parameter = input('Введите имя параметра: ')
-print(london_co[name][name_parameter])
-
+parameter_tpl = tuple(london_co[name])
+while True:
+    name_parameter = (input(f'Введите имя параметра {parameter_tpl}: ')).lower()
+    if name_parameter not in parameter_tpl:
+        print('Такого параметра нет')
+    else:
+        print(london_co[name][name_parameter])
+        break
 
 
 
